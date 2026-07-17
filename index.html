@@ -372,7 +372,10 @@ input[type=number]{font-family:'DM Mono',monospace}
     <div id="c6UploadArea">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;flex-wrap:wrap;gap:8px">
         <div style="font-size:11px;font-weight:700;color:rgba(201,168,76,0.6);letter-spacing:1px;text-transform:uppercase">📄 Fatura C6 Carbon</div>
-        <button onclick="loadJune2026()" title="Carrega a fatura de Junho/2026 que você enviou anteriormente" style="background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);border-radius:8px;color:rgba(201,168,76,0.8);cursor:pointer;font-size:10px;font-weight:700;padding:5px 12px;white-space:nowrap">📂 Jun/2026</button>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <button onclick="loadJune2026()" title="Fatura Junho/2026" style="background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);border-radius:8px;color:rgba(201,168,76,0.8);cursor:pointer;font-size:10px;font-weight:700;padding:5px 12px;white-space:nowrap">📂 Jun/2026</button>
+        <button onclick="loadJuly2026()" title="Fatura Julho/2026" style="background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);border-radius:8px;color:rgba(201,168,76,0.8);cursor:pointer;font-size:10px;font-weight:700;padding:5px 12px;white-space:nowrap">📂 Jul/2026</button>
+      </div>
       </div>
       <input type="file" id="c6FileInput" accept=".pdf" style="display:none" onchange="uploadC6PDF(event)">
       <div onclick="document.getElementById('c6FileInput').click()" style="background:rgba(255,255,255,0.03);border:1.5px dashed rgba(201,168,76,0.3);border-radius:12px;padding:20px;text-align:center;cursor:pointer;transition:all .2s" onmouseover="this.style.borderColor='rgba(201,168,76,0.6)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.3)'">
@@ -836,6 +839,82 @@ var JUNE2026_INVOICE = {
   ]
 };
 
+
+
+// July 2026 invoice data
+var JULY2026_INVOICE = {
+  total: 4761.87,
+  vencimento: '15/07/2026',
+  transactions: [
+    // Cartão principal João (0183)
+    {date:'08/06',name:'PADARIA CRISTAL',amount:6.68,who:'João'},
+    {date:'09/06',name:'MARIA FIT MARMITINHA A',amount:143.56,who:'João'},
+    {date:'11/06',name:'TABACARIA CINCO ESTREL',amount:70.00,who:'João'},
+    {date:'11/06',name:'RMPEIXOTOPIRESCIA',amount:13.00,who:'João'},
+    {date:'11/06',name:'SAVEGNAGO LOJA 50 FRAN',amount:68.36,who:'João'},
+    {date:'14/06',name:'5 ESTRELAS TABACARIA',amount:106.00,who:'João'},
+    {date:'15/06',name:'SAVEGNAGO LOJA 11 FRAN',amount:496.35,who:'João'},
+    {date:'17/06',name:'LUIZ TONIN FRANCA 09',amount:149.67,who:'João'},
+    {date:'21/06',name:'PADARIA CRISTAL',amount:24.27,who:'João'},
+    {date:'22/06',name:'PADARIA CRISTAL',amount:16.25,who:'João'},
+    {date:'22/06',name:'STRONG NOW',amount:131.90,who:'João'},
+    {date:'27/06',name:'LARISSASANTANA',amount:107.00,who:'João'},
+    {date:'27/06',name:'LU WASABI DELIVERT EIR',amount:153.75,who:'João'},
+    {date:'28/06',name:'PADARIA CRISTAL',amount:21.20,who:'João'},
+    {date:'28/06',name:'SAVEGNAGO LOJA 11 FRAN',amount:222.96,who:'João'},
+    {date:'29/06',name:'TABACARIA CINCO ESTREL',amount:70.00,who:'João'},
+    {date:'29/06',name:'SUPERMERCADO SERV BEM',amount:32.77,who:'João'},
+    {date:'30/06',name:'ZP*BECK BEBIDAS',amount:6.38,who:'João'},
+    {date:'30/06',name:'LUIZ TONIN FRANCA 09',amount:100.45,who:'João'},
+    {date:'02/07',name:'PADARIA CRISTAL',amount:4.41,who:'João'},
+    {date:'03/07',name:'SUPERMERCADO SERV BEM',amount:9.99,who:'João'},
+    {date:'04/07',name:'Anuidade Diferenciada - Parcela 3/12',amount:98.00,who:'João'},
+    {date:'04/07',name:'PADARIA CRISTAL',amount:9.55,who:'João'},
+    {date:'05/07',name:'VAREJAO E SUPERMERCADO',amount:3.50,who:'João'},
+    // Cartão virtual João (4061)
+    {date:'16/06',name:'DL*99 RIDE',amount:10.50,who:'João'},
+    {date:'20/06',name:'MP*OVERGRILL',amount:109.00,who:'João'},
+    {date:'22/06',name:'APPLE.COM/BILL',amount:19.90,who:'João'},
+    {date:'22/06',name:'CLARO PGTO FATU MENSAL',amount:79.90,who:'João'},
+    {date:'25/06',name:'DISNEY PLUS',amount:66.90,who:'João'},
+    {date:'27/06',name:'NETFLIX.COM',amount:44.90,who:'João'},
+    {date:'27/06',name:'DM*SPOTIFY',amount:40.90,who:'João'},
+    {date:'03/07',name:'APPLE.COM/BILL',amount:19.90,who:'João'},
+    // Cartão adicional Julia (6747)
+    {date:'08/06',name:'SUPERMERCADO SERV BEM',amount:34.14,who:'Julia'},
+    {date:'10/06',name:'SUPERMERCADO SERV BEM',amount:24.72,who:'Julia'},
+    {date:'10/06',name:'LUIZ TONIN FRANCA 09',amount:291.20,who:'Julia'},
+    {date:'12/06',name:'PADARIA CRISTAL',amount:2.67,who:'Julia'},
+    {date:'13/06',name:'IFD*NG MELO SOARES FO',amount:102.82,who:'Julia'},
+    {date:'15/06',name:'CASA DE CARNES SANTA',amount:59.96,who:'Julia'},
+    {date:'15/06',name:'SUPERMERCADO SERV BEM',amount:6.99,who:'Julia'},
+    {date:'17/06',name:'COBASI FRANCA',amount:259.90,who:'Julia'},
+    {date:'19/06',name:'POSTO MARIO ROBERTO PI',amount:145.83,who:'Julia'},
+    {date:'19/06',name:'DROGARIA ANGELA ROSA',amount:5.50,who:'Julia'},
+    {date:'19/06',name:'IFD*64.813.291 IRISKEN',amount:56.99,who:'Julia'},
+    {date:'20/06',name:'PADARIA CRISTAL',amount:12.49,who:'Julia'},
+    {date:'20/06',name:'SOPRO MEDITERRANEO',amount:300.00,who:'Julia'},
+    {date:'22/06',name:'SAVEGNAGO LOJA 11 FRAN',amount:174.25,who:'Julia'},
+    {date:'22/06',name:'SUPERMERCADO SERV BEM',amount:6.47,who:'Julia'},
+    {date:'24/06',name:'SAVEGNAGO LOJA 11 FRAN',amount:270.06,who:'Julia'},
+    {date:'26/06',name:'EDSON SEB ALVIM ME',amount:272.17,who:'Julia'},
+    {date:'02/07',name:'AGF AGROFRAN PRODUTOS',amount:15.90,who:'Julia'},
+    {date:'02/07',name:'SAVEGNAGO LOJA 11 FRAN',amount:155.90,who:'Julia'},
+    {date:'03/07',name:'VAREJAO IRMAOS PATROCI',amount:19.78,who:'Julia'},
+    {date:'05/07',name:'VAREJAO E SUPERMERCADO',amount:63.50,who:'Julia'},
+    {date:'06/07',name:'SAVEGNAGO LOJA 11 FRAN',amount:120.73,who:'Julia'},
+  ]
+};
+
+// ── LOAD JULY 2026 DIRECTLY ──
+function loadJuly2026(){
+  var mk='2026-07';
+  ['yearSel','yearSel2'].forEach(function(id){document.getElementById(id).value='2026';});
+  ['monthSel','monthSel2'].forEach(function(id){document.getElementById(id).value='07';});
+  c6Data[mk]={transactions:JULY2026_INVOICE.transactions,total:JULY2026_INVOICE.total,importedAt:new Date().toISOString()};
+  localStorage.setItem('jej_c6',JSON.stringify(c6Data));
+  renderC6();render();renderContas();
+}
 
 // ── LOAD JUNE 2026 DIRECTLY ──
 function loadJune2026(){
